@@ -22,4 +22,9 @@ public class AccountServiceImpl implements AccountService{
         return repository.findAll();
     }
 
+    @Override
+    public Optional<Account> getAccountById(Integer id){
+        return repository.findById(id);
+    }
+
 }
