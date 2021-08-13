@@ -70,3 +70,7 @@ CREATE TABLE portfolio (
 INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('Eddie','Ozuna',20000,30000,50000,30000);
 INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('Jonathan','Erquingo',40000,50000,60000,70000);
 INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('TKeya','Stevens',50000,60000,70000,80000);
+
+INSERT INTO instrument (askPrice) VALUES (200);
+INSERT INTO instrument (askPrice) VALUES (400);
+INSERT INTO instrument (askPrice) VALUES (500);
