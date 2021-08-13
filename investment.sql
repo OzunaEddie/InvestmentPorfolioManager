@@ -18,7 +18,6 @@ CREATE TABLE account(
 CREATE TABLE instrument (
 
 	instrumentId INT NOT NULL AUTO_INCREMENT,
-	symbol VARCHAR(200) NOT NULL,
 	askPrice DOUBLE NOT NULL,
     PRIMARY KEY (instrumentId)
     
@@ -26,37 +25,31 @@ CREATE TABLE instrument (
 
 CREATE TABLE stock (
 
-	stockId INT NOT NULL AUTO_INCREMENT,
+	stockId INT NOT NULL AUTO_INCREMENT REFERENCES instrument(instrumentId),
     value DOUBLE NOT NULL,
     symbol VARCHAR(200) NOT NULL,
-    instrumentId INT NOT NULL,
     company VARCHAR(200) NOT NULL,
-    PRIMARY KEY (stockId),
-    FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
+    PRIMARY KEY (stockId)
 
 );
 
 CREATE TABLE bond (
 
-	bondId INT NOT NULL AUTO_INCREMENT,
+	bondId INT NOT NULL AUTO_INCREMENT REFERENCES instrument(instrumentId),
     value DOUBLE NOT NULL,
     symbol VARCHAR(200) NOT NULL,
-    instrumentId INT NOT NULL,
     company VARCHAR(200) NOT NULL,
-    PRIMARY KEY (bondId),
-    FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
+    PRIMARY KEY (bondId)
 
 );
 
 CREATE TABLE etf (
 
-	etfId INT NOT NULL AUTO_INCREMENT,
+	etfId INT NOT NULL AUTO_INCREMENT REFERENCES instrument(instrumentId),
     value DOUBLE NOT NULL,
     symbol VARCHAR(200) NOT NULL,
-    instrumentId INT NOT NULL,
     company VARCHAR(200) NOT NULL,
-    PRIMARY KEY (etfId),
-    FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
+    PRIMARY KEY (etfId)
 
 );
 
@@ -73,3 +66,7 @@ CREATE TABLE portfolio (
     FOREIGN KEY (accountId) REFERENCES account(accountId),
     FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
 );
+
+INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('Eddie','Ozuna',20000,30000,50000,30000);
+INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('Jonathan','Erquingo',40000,50000,60000,70000);
+INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('TKeya','Stevens',50000,60000,70000,80000);
