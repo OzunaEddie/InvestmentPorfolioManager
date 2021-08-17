@@ -21,7 +21,7 @@ public class Instrument implements Serializable {
     }
 
     public Instrument() {
-        
+
     }
 
     public Integer getInstrumentId() {
