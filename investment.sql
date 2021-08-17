@@ -74,3 +74,9 @@ INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, 
 INSERT INTO instrument (askPrice) VALUES (200);
 INSERT INTO instrument (askPrice) VALUES (400);
 INSERT INTO instrument (askPrice) VALUES (500);
+
+INSERT INTO bond (value, symbol, company) VALUES (39200000000, 'FXNAX', 'Fidelity');
+INSERT INTO bond (value, symbol, company) VALUES (91000000000, 'MWTRX', 'Metropolitan West');
+INSERT INTO bond (value, symbol, company) VALUES (325000000000, 'DODGX', 'Dodge & Cox');
+INSERT INTO bond (value, symbol, company) VALUES (167000000, 'Great-West Multi-Sector', 'MXLMX');
+INSERT INTO bond (value, symbol, company) VALUES (29650000000, 'VWEHX', 'Vanguard High-Yield');
