@@ -1,15 +1,12 @@
 package com.citi.investmentManager.controller;
 
-import com.citi.investmentManager.entities.Account;
 import com.citi.investmentManager.entities.Instrument;
-import com.citi.investmentManager.service.AccountService;
 import com.citi.investmentManager.service.InstrumentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/instrument")
@@ -21,5 +18,11 @@ public class InstrumentController {
     @GetMapping(path = "/allInstruments")
     public Collection<Instrument> getAllInstrument(){
         return instrumentService.getAllInstrument();
+    }
+
+    @GetMapping(path = "/{id}")
+    @ResponseBody
+    public Optional<Instrument> getInstrumentById(@PathVariable("id") Integer id){
+        return instrumentService.getInstrumentById(id);
     }
 }
