@@ -13,6 +13,10 @@ public class Stock implements Serializable {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "stockid")
+    private Integer stockid;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "stockid", referencedColumnName = "instrumentid")
     private Instrument instruments;
