@@ -1,7 +1,11 @@
 package com.citi.investmentManager.service;
 
+
+import com.citi.investmentManager.entities.Account;
+import com.citi.investmentManager.entities.Bond;
 import com.citi.investmentManager.entities.Instrument;
-import com.citi.investmentManager.repo.InstrumentRepository;
+import com.citi.investmentManager.repo.AccountRepository;
+import com.citi.investmentManager.repo.BondRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,19 +15,20 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class InstrumentServiceImpl implements InstrumentService {
+public class BondServiceImpl implements BondService{
 
     @Autowired
-    private InstrumentRepository repository;
-
+    private BondRepository repository;
 
     @Override
-    public Collection<Instrument> getAllInstrument() {
-        return repository.findAll();
+    public Collection<Bond> getAllBonds() {
+        return null;
     }
 
     @Override
-    public Optional<Instrument> getInstrumentById(Integer id){
+    public Optional<Bond> getBondById(Integer id){
+
         return repository.findById(id);
     }
+
 }
