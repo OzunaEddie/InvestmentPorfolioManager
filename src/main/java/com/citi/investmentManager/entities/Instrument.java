@@ -21,8 +21,12 @@ public class Instrument implements Serializable {
     private Set<Portfolio> portfolio;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "bondid")
+    @JoinColumn(name = "instrumentid")
     private Bond bond;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "instrumentid")
+    private Stock stock;
 
 
 
