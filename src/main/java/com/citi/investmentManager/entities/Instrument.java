@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "instrument")
 public class Instrument implements Serializable {
@@ -13,14 +16,15 @@ public class Instrument implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer instrumentId;
 
-    @Column(name = "askprice")
-    private Double askPrice;
+    @Column(name = "quote")
+    private Double quote;
 
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instrumentid")
     private Etf etf;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "instrument", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private Set<Portfolio> portfolio;
@@ -36,9 +40,9 @@ public class Instrument implements Serializable {
 
 
 
-    public Instrument(Integer instrumentId, Double askPrice) {
+    public Instrument(Integer instrumentId, Double quote) {
         this.instrumentId = instrumentId;
-        this.askPrice = askPrice;
+        this.quote = quote;
     }
 
     public Instrument() {
@@ -53,19 +57,19 @@ public class Instrument implements Serializable {
         this.instrumentId = instrumentId;
     }
 
-    public Double getAskPrice() {
-        return askPrice;
+    public Double getQuote() {
+        return quote;
     }
 
-    public void setAskPrice(Double askPrice) {
-        this.askPrice = askPrice;
+    public void setQuote(Double quote) {
+        this.quote = quote;
     }
 
     @Override
     public String toString() {
         return "Instrument{" +
                 "instrumentId=" + instrumentId +
-                ", askPrice=" + askPrice +
+                ", quote=" + quote +
                 '}';
     }
 }

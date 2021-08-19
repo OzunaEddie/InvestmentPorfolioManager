@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.sound.sampled.Port;
 import java.io.Serializable;
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "account")
@@ -18,17 +19,14 @@ public class Account implements Serializable {
     private String firstName;
     @Column(name = "lastname")
     private String lastName;
-    @Column(name = "cashvalue")
-    private Double cashValue;
-    @Column(name = "investmentvalue")
-    private Double investmentValue;
-    @Column(name = "networth")
-    private Double netWorth;
     @Column(name = "income")
     private Double income;
 
+
+
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Portfolio> portfolio;
 
 
@@ -40,13 +38,10 @@ public class Account implements Serializable {
         this.portfolio = portfolio;
     }
 
-    public Account(Integer accountId, String firstName, String lastName, Double cashValue, Double investmentValue, Double netWorth, Double income) {
+    public Account(Integer accountId, String firstName, String lastName, Double income) {
         this.accountId = accountId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.cashValue = cashValue;
-        this.investmentValue = investmentValue;
-        this.netWorth = netWorth;
         this.income = income;
     }
 
@@ -78,29 +73,6 @@ public class Account implements Serializable {
         this.lastName = lastName;
     }
 
-    public Double getCashValue() {
-        return cashValue;
-    }
-
-    public void setCashValue(Double cashValue) {
-        this.cashValue = cashValue;
-    }
-
-    public Double getInvestmentValue() {
-        return investmentValue;
-    }
-
-    public void setInvestmentValue(Double investmentValue) {
-        this.investmentValue = investmentValue;
-    }
-
-    public Double getNetWorth() {
-        return netWorth;
-    }
-
-    public void setNetWorth(Double netWorth) {
-        this.netWorth = netWorth;
-    }
 
     public Double getIncome() {
         return income;
@@ -116,9 +88,6 @@ public class Account implements Serializable {
                 "accountId=" + accountId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", cashValue=" + cashValue +
-                ", investmentValue=" + investmentValue +
-                ", netWorth=" + netWorth +
                 ", income=" + income +
                 '}';
     }
