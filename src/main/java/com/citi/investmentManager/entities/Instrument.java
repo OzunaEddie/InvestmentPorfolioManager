@@ -16,11 +16,11 @@ public class Instrument implements Serializable {
     @Column(name = "askprice")
     private Double askPrice;
 
-<<<<<<< HEAD
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instrumentid")
     private Etf etf;
-=======
+
     @OneToMany(mappedBy = "instrument", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private Set<Portfolio> portfolio;
@@ -34,7 +34,7 @@ public class Instrument implements Serializable {
     private Stock stock;
 
 
->>>>>>> 0a4f4a09a7cd1259e175f98938201aae872bd593
+
 
     public Instrument(Integer instrumentId, Double askPrice) {
         this.instrumentId = instrumentId;
