@@ -1,7 +1,7 @@
 FROM maven:3.6.3-openjdk-11 AS maven
 COPY . /usr/src/mymaven
 WORKDIR /usr/src/mymaven
-RUN mvn -Dmaven.test.skip=true clean package
+RUN mvn -Dmaven.test.skip=true clean install
 
 FROM openjdk:11
 COPY --from=maven /usr/src/mymaven/target/* app.jar
