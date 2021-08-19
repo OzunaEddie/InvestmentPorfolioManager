@@ -60,7 +60,6 @@ CREATE TABLE portfolio (
     portfolioId INT NOT NULL AUTO_INCREMENT,
     accountId INT NOT NULL,
     instrumentId INT NOT NULL,
-    currentValue DOUBLE NOT NULL,
     shareCount INT,
     date DATE NOT NULL,
     PRIMARY KEY (portfolioId),
@@ -106,13 +105,13 @@ INSERT INTO etf (etfid, value, symbol, company) VALUES (11, 600, 'VTI', 'Vanguar
 INSERT INTO etf (etfid, value, symbol, company) VALUES (12, 250, 'SPY', 'SPDR S&P 500 ETF');
 INSERT INTO etf (etfid, value, symbol, company) VALUES (13, 450, 'VTWO', 'Vanguard Russel ETF');
 
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(1, 1, 100.83, 20, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(2, 2, 100.83, 10, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(1, 3, 100.83, 20, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(3, 4, 100.83, 10, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(1, 5, 100.83, 20, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(2, 6, 100.83, 10, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(3, 7, 100.83, 20, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(2, 8, 100.83, 10, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(1, 9, 100.83, 20, CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, currentValue, shareCount, date) VALUES(2, 10, 100.83, 10, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(1, 1, 20, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(2, 2, 10, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(1, 3, 20, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(3, 4, 10, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(1, 5, 20, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(2, 6, 10, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(3, 7, 20, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(2, 8, 10, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(1, 9, 20, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, date) VALUES(2, 10, 10, CURDATE());

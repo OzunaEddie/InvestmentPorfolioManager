@@ -5,7 +5,7 @@ import javax.persistence.*;
 import javax.sound.sampled.Port;
 import java.io.Serializable;
 import java.util.Set;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Table(name = "account")
@@ -26,7 +26,7 @@ public class Account implements Serializable {
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
-    @JsonManagedReference
+
     private Set<Portfolio> portfolio;
 
 

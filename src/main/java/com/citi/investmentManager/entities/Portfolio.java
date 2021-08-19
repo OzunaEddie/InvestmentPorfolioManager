@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "portfolio")
@@ -16,19 +16,15 @@ public class Portfolio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer portfolioId;
 
-
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "accountid")
-    @JsonBackReference
     private Account account;
 
-    @JsonManagedReference
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instrumentid")
     private Instrument instrument;
-
-    @Column(name = "currentvalue")
-    private Double currentValue;
 
     @Column(name = "sharecount")
     private Integer shareCount;
@@ -44,11 +40,10 @@ public class Portfolio implements Serializable {
         this.instrument = instrument;
     }
 
-    public Portfolio(Integer portfolioId, Account account, Instrument instrument, Double currentValue, Date date) {
+    public Portfolio(Integer portfolioId, Account account, Instrument instrument, Date date) {
         this.portfolioId = portfolioId;
         this.account = account;
         this.instrument = instrument;
-        this.currentValue = currentValue;
         this.date = date;
     }
 
@@ -85,14 +80,6 @@ public class Portfolio implements Serializable {
 
     public void setInstruments(Instrument instruments) {
         this.instrument = instruments;
-    }
-
-    public Double getCurrentValue() {
-        return currentValue;
-    }
-
-    public void setCurrentValue(Double currentValue) {
-        this.currentValue = currentValue;
     }
 
     public Date getDate() {
