@@ -4,53 +4,63 @@ use investment;
 
 CREATE TABLE account(
 
-	accountId INT NOT NULL AUTO_INCREMENT,
-    firstName VARCHAR(200) NOT NULL,
-	lastName VARCHAR(200) NOT NULL,
-    cashValue DOUBLE NOT NULL,
-    investmentValue DOUBLE NOT NULL,
-    netWorth DOUBLE NOT NULL,
-    income DOUBLE NOT NULL,
-    PRIMARY KEY (accountId)
-    
+                        accountId INT NOT NULL AUTO_INCREMENT,
+                        firstName VARCHAR(200) NOT NULL,
+                        lastName VARCHAR(200) NOT NULL,
+                        income DOUBLE NOT NULL,
+                        PRIMARY KEY (accountId)
+
 );
 
+CREATE TABLE bankaccount (
+                             bankId INT NOT NULL AUTO_INCREMENT,
+                             bankName VARCHAR(200) NOT NULL,
+                             cashValue DOUBLE NOT NULL,
+                             accountType VARCHAR(200) NOT NULL,
+                             accountId INT NOT NULL,
+                             PRIMARY KEY (bankId),
+                             FOREIGN KEY (accountId) REFERENCES account(accountId)
+
+);
 
 CREATE TABLE instrument (
 
-	instrumentId INT NOT NULL AUTO_INCREMENT,
-	askPrice DOUBLE NOT NULL,
-    PRIMARY KEY (instrumentId)
-    
+                            instrumentId INT NOT NULL AUTO_INCREMENT,
+                            quote DOUBLE NOT NULL,
+                            PRIMARY KEY (instrumentId)
+
 );
 
 CREATE TABLE stock (
 
-	stockId INT NOT NULL AUTO_INCREMENT REFERENCES instrument(instrumentId),
-    value DOUBLE NOT NULL,
-    symbol VARCHAR(200) NOT NULL,
-    company VARCHAR(200) NOT NULL,
-    PRIMARY KEY (stockId)
+                       stockId INT NOT NULL,
+                       value DOUBLE NOT NULL,
+                       symbol VARCHAR(200) NOT NULL,
+                       company VARCHAR(200) NOT NULL,
+                       PRIMARY KEY (stockId),
+                       FOREIGN KEY (stockId) REFERENCES instrument(instrumentId)
 
 );
 
 CREATE TABLE bond (
 
-	bondId INT NOT NULL AUTO_INCREMENT REFERENCES instrument(instrumentId),
-    value DOUBLE NOT NULL,
-    symbol VARCHAR(200) NOT NULL,
-    company VARCHAR(200) NOT NULL,
-    PRIMARY KEY (bondId)
+                      bondId INT NOT NULL,
+                      value DOUBLE NOT NULL,
+                      symbol VARCHAR(200) NOT NULL,
+                      company VARCHAR(200) NOT NULL,
+                      PRIMARY KEY (bondId),
+                      FOREIGN KEY (bondId) REFERENCES instrument(instrumentId)
 
 );
 
 CREATE TABLE etf (
 
-	etfId INT NOT NULL AUTO_INCREMENT REFERENCES instrument(instrumentId),
-    value DOUBLE NOT NULL,
-    symbol VARCHAR(200) NOT NULL,
-    company VARCHAR(200) NOT NULL,
-    PRIMARY KEY (etfId)
+                     etfId INT NOT NULL,
+                     value DOUBLE NOT NULL,
+                     symbol VARCHAR(200) NOT NULL,
+                     company VARCHAR(200) NOT NULL,
+                     PRIMARY KEY (etfId),
+                     FOREIGN KEY (etfId) REFERENCES instrument(instrumentId)
 
 );
 
@@ -58,27 +68,48 @@ CREATE TABLE etf (
 
 CREATE TABLE portfolio (
 
-	portfolioId INT NOT NULL AUTO_INCREMENT,
-    accountId INT NOT NULL,
-    instrumentId INT NOT NULL,
-    currentValue DOUBLE NOT NULL,
-    shareCount INT,
-    date DATE NOT NULL,
-    PRIMARY KEY (portfolioId),
-    FOREIGN KEY (accountId) REFERENCES account(accountId),
-    FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
+                           portfolioId INT NOT NULL AUTO_INCREMENT,
+                           accountId INT NOT NULL,
+                           instrumentId INT NOT NULL,
+                           currentValue DOUBLE NOT NULL,
+                           shareCount INT,
+                           date DATE NOT NULL,
+                           PRIMARY KEY (portfolioId),
+                           FOREIGN KEY (accountId) REFERENCES account(accountId),
+                           FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
 );
 
-INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('Eddie','Ozuna',20000,30000,50000,30000);
-INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('Jonathan','Erquingo',40000,50000,60000,70000);
-INSERT INTO account (firstName, lastName, cashValue, investmentValue, netWorth, income) VALUES ('TKeya','Stevens',50000,60000,70000,80000);
+INSERT INTO account (firstName, lastName,income) VALUES ('Eddie','Ozuna',300000);
+INSERT INTO account (firstName, lastName,income) VALUES ('Jonathan','Erquingo',700000);
+INSERT INTO account (firstName, lastName,income) VALUES ('TKeya','Stevens',800000);
 
-INSERT INTO instrument (askPrice) VALUES (200);
-INSERT INTO instrument (askPrice) VALUES (400);
-INSERT INTO instrument (askPrice) VALUES (500);
+INSERT INTO instrument (quote) VALUES (200);
+INSERT INTO instrument (quote) VALUES (400);
+INSERT INTO instrument (quote) VALUES (600);
+INSERT INTO instrument (quote) VALUES (700);
+INSERT INTO instrument (quote) VALUES (800);
 
-INSERT INTO bond (value, symbol, company) VALUES (39200000000, 'FXNAX', 'Fidelity');
-INSERT INTO bond (value, symbol, company) VALUES (91000000000, 'MWTRX', 'Metropolitan West');
-INSERT INTO bond (value, symbol, company) VALUES (325000000000, 'DODGX', 'Dodge & Cox');
-INSERT INTO bond (value, symbol, company) VALUES (167000000, 'Great-West Multi-Sector', 'MXLMX');
-INSERT INTO bond (value, symbol, company) VALUES (29650000000, 'VWEHX', 'Vanguard High-Yield');
+INSERT INTO instrument (quote) VALUES (120.83);
+INSERT INTO instrument (quote) VALUES (540.17);
+INSERT INTO instrument (quote) VALUES (169.91);
+INSERT INTO instrument (quote) VALUES (193.80);
+INSERT INTO instrument (quote) VALUES (124.86);
+
+INSERT INTO bond (bondId,value, symbol, company) VALUES (1,150000, 'FXNAX', 'Fidelity');
+INSERT INTO bond (bondId,value, symbol, company) VALUES (2,200000, 'MWTRX', 'Metropolitan West');
+INSERT INTO bond (bondId,value, symbol, company) VALUES (3,300000, 'DODGX', 'Dodge & Cox');
+INSERT INTO bond (bondId,value, symbol, company) VALUES (4,400000, 'Great-West Multi-Sector', 'MXLMX');
+INSERT INTO bond (bondId,value, symbol, company) VALUES (5,500000, 'VWEHX', 'Vanguard High-Yield');
+
+INSERT INTO stock (stockId,value, symbol, company) VALUES (6,100.83, 'DLTR', 'Dollar Tree Inc');
+INSERT INTO stock (stockId,value, symbol, company) VALUES (7,520.17, 'DPZ', "Domino's Pizza Inc");
+INSERT INTO stock (stockId,value, symbol, company) VALUES (8,149.91, 'WMT', 'Walmart');
+INSERT INTO stock (stockId,value, symbol, company) VALUES (9,173.80, 'DIS', 'Walt Disney');
+INSERT INTO stock (stockId,value, symbol, company) VALUES (10,104.86, 'AMD', 'AMD (Advanced Micro Devices) Inc.');
+
+INSERT INTO bankaccount (bankName,cashValue,accountType,accountId) VALUES ("Citi",500000,"Savings",1);
+INSERT INTO bankaccount (bankName,cashValue,accountType,accountId) VALUES ("Citi",600000,"Savings",2);
+INSERT INTO bankaccount (bankName,cashValue,accountType,accountId) VALUES ("Citi",700000,"Savings",3);
+
+INSERT INTO portfolio (accountId,instrumentId,currentValue,shareCount,date) VALUES(1,2,100.83,20,NOW());
+INSERT INTO portfolio (accountId,instrumentId,currentValue,shareCount,date) VALUES(2,4,100.83,10,NOW());
