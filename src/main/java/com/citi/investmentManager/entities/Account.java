@@ -2,7 +2,9 @@ package com.citi.investmentManager.entities;
 
 
 import javax.persistence.*;
+import javax.sound.sampled.Port;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "account")
@@ -24,6 +26,19 @@ public class Account implements Serializable {
     private Double netWorth;
     @Column(name = "income")
     private Double income;
+
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Portfolio> portfolio;
+
+
+    public Set<Portfolio> getPortfolio() {
+        return portfolio;
+    }
+
+    public void setPortfolio(Set<Portfolio> portfolio) {
+        this.portfolio = portfolio;
+    }
 
     public Account(Integer accountId, String firstName, String lastName, Double cashValue, Double investmentValue, Double netWorth, Double income) {
         this.accountId = accountId;

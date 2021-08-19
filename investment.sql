@@ -15,6 +15,7 @@ CREATE TABLE account(
     
 );
 
+
 CREATE TABLE instrument (
 
 	instrumentId INT NOT NULL AUTO_INCREMENT,

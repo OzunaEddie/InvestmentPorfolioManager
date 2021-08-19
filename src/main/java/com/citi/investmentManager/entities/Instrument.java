@@ -2,6 +2,7 @@ package com.citi.investmentManager.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "instrument")
@@ -14,6 +15,16 @@ public class Instrument implements Serializable {
 
     @Column(name = "askprice")
     private Double askPrice;
+
+    @OneToMany(mappedBy = "instrument", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Portfolio> portfolio;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bondid")
+    private Bond bond;
+
+
 
     public Instrument(Integer instrumentId, Double askPrice) {
         this.instrumentId = instrumentId;
