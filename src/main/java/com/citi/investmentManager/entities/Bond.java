@@ -73,4 +73,15 @@ public class Bond implements Serializable {
         this.symbol = symbol;
         this.company = company;
     }
+
+    @Override
+    public String toString() {
+        return "Bond{" +
+                "bondId=" + bondId +
+                ", instrumentId=" + instrumentId +
+                ", value=" + value +
+                ", symbol='" + symbol + '\'' +
+                ", company='" + company + '\'' +
+                '}';
+    }
 }

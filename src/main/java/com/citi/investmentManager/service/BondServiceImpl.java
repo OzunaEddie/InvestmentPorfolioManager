@@ -22,12 +22,11 @@ public class BondServiceImpl implements BondService{
 
     @Override
     public Collection<Bond> getAllBonds() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public Optional<Bond> getBondById(Integer id){
-
         return repository.findById(id);
     }
 
