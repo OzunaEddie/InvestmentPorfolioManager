@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -19,5 +20,10 @@ public class StockServiceImpl implements StockService {
     @Override
     public Collection<Stock> getAllStocks() {
         return stockRepository.findAll();
+    }
+
+    @Override
+    public Optional<Stock> getStockbyId(Integer id) {
+        return stockRepository.findById(id);
     }
 }

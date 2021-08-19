@@ -11,9 +11,8 @@ public class Bond implements Serializable {
     @Column(name = "bondid")
     private Integer bondId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "bondid", referencedColumnName = "instrumentid")
-    private Instrument instrumentId;
+    @OneToOne(mappedBy = "bond")
+    private Instrument instrument;
 
     @Column(name = "value")
     private Double value;
@@ -34,12 +33,12 @@ public class Bond implements Serializable {
         this.bondId = bondId;
     }
 
-    public Instrument getInstrumentId() {
-        return instrumentId;
+    public Instrument getInstrument() {
+        return instrument;
     }
 
-    public void setInstrumentId(Instrument instrumentId) {
-        this.instrumentId = instrumentId;
+    public void setInstrument(Instrument instrument) {
+        this.instrument = instrument;
     }
 
     public Double getValue() {
@@ -66,11 +65,22 @@ public class Bond implements Serializable {
         this.company = company;
     }
 
-    public Bond(Integer bondId, Instrument instrumentId, Double value, String symbol, String company) {
+    public Bond(Integer bondId, Instrument instrument, Double value, String symbol, String company) {
         this.bondId = bondId;
-        this.instrumentId = instrumentId;
+        this.instrument = instrument;
         this.value = value;
         this.symbol = symbol;
         this.company = company;
+    }
+
+    @Override
+    public String toString() {
+        return "Bond{" +
+                "bondId=" + bondId +
+                ", instrument=" + instrument +
+                ", value=" + value +
+                ", symbol='" + symbol + '\'' +
+                ", company='" + company + '\'' +
+                '}';
     }
 }
