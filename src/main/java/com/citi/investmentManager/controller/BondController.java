@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping(path = "/api/bond")
 @CrossOrigin
 public class BondController {
-    
+
     @Autowired
     private BondService bondService;
 
@@ -30,10 +30,10 @@ public class BondController {
 
     @PostMapping(path = "/bond")
     @ResponseBody
-    public void addBond(@RequestBody Bond bond) { bondService.addNewBond(); }
+    public void addBond(@RequestBody Bond bond) { bondService.addNewBond(bond); }
 
     @DeleteMapping(path = "/{id}")
     @ResponseBody
-    public void deleteBond(@PathVariable("id") Integer id) { bondService.deleteBond(id); }
+    public void deleteBond(@PathVariable("id") Bond bond) { bondService.deleteBond(bond); }
 
 }

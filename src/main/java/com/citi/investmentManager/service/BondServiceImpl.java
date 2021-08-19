@@ -27,13 +27,14 @@ public class BondServiceImpl implements BondService{
     }
 
     @Override
-    public void addNewBond() {
-
+    public Bond addNewBond(Bond bond) {
+        bond.setBondId(0);
+        return repository.save(bond);
     }
 
     @Override
-    public void deleteBond(Integer id) {
-
+    public void deleteBond(Bond bond) {
+        repository.delete(bond);
     }
 
 }

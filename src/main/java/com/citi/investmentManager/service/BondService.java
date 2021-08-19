@@ -10,7 +10,7 @@ public interface BondService {
     Collection<Bond> getAllBonds();
     Optional<Bond> getBondById(Integer id);
 
-    void addNewBond();
+    Bond addNewBond(Bond bond);
 
-    void deleteBond(Integer id);
+    void deleteBond(Bond bond);
 }
