@@ -62,6 +62,7 @@ CREATE TABLE portfolio (
     accountId INT NOT NULL,
     instrumentId INT NOT NULL,
     currentValue DOUBLE NOT NULL,
+    shareCount INT,
     date DATE NOT NULL,
     PRIMARY KEY (portfolioId),
     FOREIGN KEY (accountId) REFERENCES account(accountId),

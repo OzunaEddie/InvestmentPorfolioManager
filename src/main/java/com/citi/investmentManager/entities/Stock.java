@@ -17,23 +17,15 @@ public class Stock implements Serializable {
     @Column(name = "stockid")
     private Integer stockid;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "stockid", referencedColumnName = "instrumentid")
-    private Instrument instruments;
+    @OneToOne(mappedBy = "stock")
+    private Instrument instrument;
+
     @Column(name = "value")
     private Double value;
     @Column(name = "symbol")
     private String symbol;
     @Column(name = "company")
     private String company;
-
-
-    //will need the class for this to work
-    //https://www.baeldung.com/jpa-one-to-one
-
-
-
-
 
 
     public Double getValue() {
@@ -53,11 +45,11 @@ public class Stock implements Serializable {
     }
 
     public Instrument getInstruments() {
-        return instruments;
+        return instrument;
     }
 
     public void setInstruments(Instrument instruments) {
-        this.instruments = instruments;
+        this.instrument = instruments;
     }
 
     public String getCompany() {
@@ -71,7 +63,7 @@ public class Stock implements Serializable {
     @Override
     public String toString() {
         return "Stock{" +
-                "instruments=" + instruments +
+                "instruments=" + instrument +
                 ", value=" + value +
                 ", symbol='" + symbol + '\'' +
                 ", company='" + company + '\'' +
