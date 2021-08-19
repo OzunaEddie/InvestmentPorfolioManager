@@ -4,8 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Table(name = "instrument")
@@ -24,7 +23,6 @@ public class Instrument implements Serializable {
     @JoinColumn(name = "instrumentid")
     private Etf etf;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "instrument", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private Set<Portfolio> portfolio;
