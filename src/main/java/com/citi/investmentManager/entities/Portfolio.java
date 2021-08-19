@@ -26,9 +26,6 @@ public class Portfolio implements Serializable {
     @JoinColumn(name = "instrumentid")
     private Instrument instrument;
 
-    @Column(name = "currentvalue")
-    private Double currentValue;
-
     @Column(name = "sharecount")
     private Integer shareCount;
 
@@ -43,11 +40,10 @@ public class Portfolio implements Serializable {
         this.instrument = instrument;
     }
 
-    public Portfolio(Integer portfolioId, Account account, Instrument instrument, Double currentValue, Date date) {
+    public Portfolio(Integer portfolioId, Account account, Instrument instrument, Date date) {
         this.portfolioId = portfolioId;
         this.account = account;
         this.instrument = instrument;
-        this.currentValue = currentValue;
         this.date = date;
     }
 
@@ -84,14 +80,6 @@ public class Portfolio implements Serializable {
 
     public void setInstruments(Instrument instruments) {
         this.instrument = instruments;
-    }
-
-    public Double getCurrentValue() {
-        return currentValue;
-    }
-
-    public void setCurrentValue(Double currentValue) {
-        this.currentValue = currentValue;
     }
 
     public Date getDate() {
