@@ -15,6 +15,10 @@ public class Instrument implements Serializable {
     @Column(name = "askprice")
     private Double askPrice;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "instrumentid")
+    private Etf etf;
+
     public Instrument(Integer instrumentId, Double askPrice) {
         this.instrumentId = instrumentId;
         this.askPrice = askPrice;
