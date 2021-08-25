@@ -8,6 +8,6 @@ RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java_8.
 RUN dpkg -i /tmp/mysql-connector.deb
 COPY --from=maven /usr/src/mymaven/target/InvestmentManager-0.0.1-SNAPSHOT.jar app.jar
 COPY src/main/resources/application-docker.properties application.properties
-EXPOSE 8080
-ENTRYPOINT [ "sh", "-c",  "java -jar /app.jar" ]
+EXPOSE 8081
+ENTRYPOINT [ "sh", "-c",  "java -jar -Dserver.port=8081 /app.jar" ]
 
