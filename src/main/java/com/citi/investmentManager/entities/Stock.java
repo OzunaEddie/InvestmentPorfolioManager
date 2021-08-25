@@ -17,7 +17,8 @@ public class Stock implements Serializable {
     @Column(name = "stockid")
     private Integer stockid;
 
-    @OneToOne(mappedBy = "stock")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "instrumentid")
     private Instrument instrument;
 
     @Column(name = "value")
