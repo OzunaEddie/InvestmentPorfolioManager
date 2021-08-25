@@ -1,5 +1,7 @@
 package com.citi.investmentManager.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -17,8 +19,12 @@ public class BankAccount implements Serializable {
     private Double cashValue;
     @Column(name = "accounttype")
     private String accountType;
-    @Column(name = "accountid")
-    private Integer accountId;
+
+    // not sure if we need to make getters and setters for different operations for the project
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "accountid")
+    private Account account;
 
     public Integer getBankId() {
         return bankId;
@@ -52,13 +58,7 @@ public class BankAccount implements Serializable {
         this.accountType = accountType;
     }
 
-    public Integer getAccountId() {
-        return accountId;
-    }
 
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
-    }
 
     @Override
     public String toString() {
@@ -66,8 +66,7 @@ public class BankAccount implements Serializable {
                 "bankId=" + bankId +
                 ", bankName='" + bankName + '\'' +
                 ", cashValue=" + cashValue +
-                ", accountType='" + accountType + '\'' +
-                ", accountId=" + accountId +
+                ", accountType='" + accountType +
                 '}';
     }
 }

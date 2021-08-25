@@ -23,6 +23,11 @@ public class Account implements Serializable {
     private Double income;
 
 
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    public Set<BankAccount> bankAccount;
+
+
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
