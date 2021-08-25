@@ -8,12 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NetWorthComponent } from './net-worth/net-worth.component';
+import { InsightComponent } from './insight/insight.component';
+import { MarketMoverComponent } from './market-mover/market-mover.component';
+import { CashFlowComponent } from './cash-flow/cash-flow.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     NetWorthComponent,
+    InsightComponent,
+    MarketMoverComponent,
+    CashFlowComponent,
   ],
   imports: [
     BrowserModule,
