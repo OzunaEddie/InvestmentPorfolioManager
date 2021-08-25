@@ -11,6 +11,7 @@ import { NetWorthComponent } from './net-worth/net-worth.component';
 import { InsightComponent } from './insight/insight.component';
 import { MarketMoverComponent } from './market-mover/market-mover.component';
 import { CashFlowComponent } from './cash-flow/cash-flow.component';
+import { NgxChartModule } from 'ngx-chart';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CashFlowComponent } from './cash-flow/cash-flow.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
