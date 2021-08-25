@@ -1,0 +1,55 @@
+.side-btn{
+    background-color: #b3bac0;
+    color: black;
+    border-radius: 0;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.4);
+    text-align: left;
+}
+.side-sections {
+    font-weight: bold;
+}
+
+.alignLeft{
+    float: left;
+}
+
+.alignRight{
+    float: right;
+}
+.side-networth{
+    margin-top: 4.4%;
+    margin-left: 5.5%;
+}
+
+.side-networth span{
+    margin-right: 5.5%;
+}
+
+.side-content-btn{
+    color: rgb(4, 144, 238);
+    border-radius: 0;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+}
+.side-content-btn span {
+    color: black;
+    font-weight: normal;
+}
+
+.div_separator {
+    border-bottom: 2px solid #dddddd;
+}
+
+.displayCashList .div_separator:last-child {
+    border-bottom: 0px;
+}
+
+.side-subscript{
+    font-size: 14px;
+    color: #696969 !important;
+    margin-top: 20% !important;
+    font-weight: bold;
+}
