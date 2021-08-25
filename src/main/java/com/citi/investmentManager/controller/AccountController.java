@@ -26,5 +26,10 @@ public class AccountController {
         return accountService.getAccountById(id);
     }
 
+    @PostMapping(value="/posts")
+    @ResponseBody
+    public Account addAcount(@RequestBody Account account) {
+        return accountService.addAccount(account);
+    }
 
 }
