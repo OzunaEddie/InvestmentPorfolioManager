@@ -1,7 +1,7 @@
 <article>
   <mat-drawer-container class="drawer-container">
     <mat-drawer class="drawer-content" mode="side" opened>
-      <app-sidebar [accountInfo]="accountInfo"></app-sidebar>
+      <app-sidebar [accountInfo]="accountInfo" [totalCash]="totalCash" [totalInvestment]="totalInvestment" [netWorth]="netWorth"></app-sidebar>
     </mat-drawer>
     <mat-drawer-content style="text-align: center;">  
       <app-net-worth></app-net-worth>

@@ -9,14 +9,16 @@ import { TypicodeService } from 'src/services/typicode.service';
 export class SidebarComponent implements OnInit {
 
   @Input() accountInfo:any;
+  @Input() totalCash:number = 0;
+  @Input() totalInvestment:number = 0;
+  @Input() netWorth:number = 0;
 
   displayInvestmentList = false;
   displayCashList = false;
   investmentApiCallMade = false;
   bankApiCallMade = false;
-  totalInvestment = 0;
-  investmentList:any = []
-  bankAccountList:any = []
+  investmentList:any = [];
+  bankAccountList:any = [];
 
   constructor(private typicodeService:TypicodeService){}
 
@@ -57,7 +59,6 @@ export class SidebarComponent implements OnInit {
 
   getCashList(){
     this.displayCashList = !this.displayCashList;
-    console.log(this.accountInfo['bankAccount'])
     if(this.displayCashList && !this.bankApiCallMade){
       this.accountInfo['bankAccount'].forEach((element: any) => {
         this.bankAccountList.push(element);

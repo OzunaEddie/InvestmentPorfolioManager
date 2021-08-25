@@ -10,9 +10,11 @@ import { TypicodeService } from 'src/services/typicode.service';
 })
 export class AppComponent {
   title = 'ui';
-  accountId:number = 1
-  accountInfo = {}
-  totalCash = 0
+  accountId:number = 1;
+  accountInfo:any = {};
+  totalCash = 0;
+  totalInvestment = 0;
+  netWorth = 0;
 
   constructor(private typicodeService:TypicodeService) {
 
@@ -23,7 +25,12 @@ export class AppComponent {
   setAccount(){
     this.typicodeService.getAccountByIdApi(this.accountId)
     .subscribe( (data) => {
+      console.log(data)
       this.accountInfo = data
+      this.accountInfo['bankAccount'].forEach((element: any) => {
+        this.totalCash += element['cashValue'];
+      });
+      this.netWorth += this.totalCash
     });
   }
   

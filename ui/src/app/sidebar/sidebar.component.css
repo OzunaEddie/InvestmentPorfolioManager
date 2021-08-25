@@ -53,3 +53,10 @@
     margin-top: 20% !important;
     font-weight: bold;
 }
+
+.citi-logo {
+    position: relative;
+    width: 30%;
+    right: 20px;
+    bottom: 15px;
+}
