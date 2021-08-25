@@ -27,4 +27,10 @@ public class AccountServiceImpl implements AccountService{
         return repository.findById(id);
     }
 
+    @Override
+    public Account addAccount(Account account) {
+        account.setAccountId(0);
+        return repository.save(account);
+    }
+
 }
