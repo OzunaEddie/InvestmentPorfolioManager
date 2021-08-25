@@ -32,6 +32,17 @@ public class Portfolio implements Serializable {
     @Column(name = "date")
     private Date date;
 
+    @Column(name = "typeofinstrument")
+    private String typeOfInstrument;
+
+    public String getTypeOfInstrument() {
+        return typeOfInstrument;
+    }
+
+    public void setTypeOfInstrument(String typeOfInstrument) {
+        this.typeOfInstrument = typeOfInstrument;
+    }
+
     public Instrument getInstrument() {
         return instrument;
     }
