@@ -14,7 +14,7 @@
       <div class="side-main-btn" *ngFor="let item of bankAccountList">
         <button class="side-content-btn" mat-button color="basic">
           {{item.bankName}}
-          <span class="alignRight">{{item.cashValue | currency}}</span><br>
+          <span class="alignRight">{{ item.cashValue | currency }}</span><br>
           <span class="side-subscript">{{item.accountType}}</span>
         </button>
         <div class="div_separator"></div>
