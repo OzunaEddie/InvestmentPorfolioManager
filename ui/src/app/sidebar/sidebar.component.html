@@ -1,17 +1,21 @@
 <div class="side-sections">
-    <p class="side-networth">NET WORTH
+  <div class="side-networth">
+    Hello, {{accountInfo['firstName']}} {{accountInfo['lastName']}}
+    <p><br>
+      NET WORTH
       <span class="alignRight">$1000</span>
-    </p>
+    </p> 
+  </div>
   <section>
     <button class="side-btn" mat-button color="primary" (click)="getCashList()">
       CASH
     <span class="alignRight">{{ 1000  | currency }}</span></button>
     <aside *ngIf="displayCashList">
-      <div class="side-main-btn" *ngFor="let item of cashList">
+      <div class="side-main-btn" *ngFor="let item of bankAccountList">
         <button class="side-content-btn" mat-button color="basic">
-          {{item.bank}}
-          <span class="alignRight">{{item.amount | currency}}</span><br>
-          <span class="side-subscript">Savings</span>
+          {{item.bankName}}
+          <span class="alignRight">{{item.cashValue | currency}}</span><br>
+          <span class="side-subscript">{{item.accountType}}</span>
         </button>
         <div class="div_separator"></div>
       </div>
@@ -26,7 +30,8 @@
       <div class="side-main-btn" *ngFor="let item of investmentList">
         <button class="side-content-btn" mat-button color="basic">
           {{item.symbol}}
-          <span class="alignRight">{{item.price | currency}}</span>
+          <span class="alignRight">{{item.value | currency}}</span><br>
+          <span class="side-subscript">{{item.company}}</span>
         </button>
         <div class="div_separator"></div>
       </div>

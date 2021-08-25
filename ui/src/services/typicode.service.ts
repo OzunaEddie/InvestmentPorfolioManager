@@ -14,8 +14,20 @@ export class TypicodeService {
 
   // we need a method of this service - in this case we call an api end-point
 
-  getAccountApi(){
-    return this.http.get('./api/account/1');
+  getAccountByIdApi(accountId:number){
+    return this.http.get(`./api/account/${accountId}`);
+  }
+
+  getStockByIdApi(stockId:number){
+    return this.http.get(`./api/stock/${stockId}`);
+  }
+
+  getBondByIdApi(bondId:number){
+    return this.http.get(`./api/bond/${bondId}`);
+  }
+
+  getEtfByIdApi(etfId:number){
+    return this.http.get(`./api/etf/${etfId}`);
   }
 
 }

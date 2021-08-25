@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TypicodeService } from 'src/services/typicode.service';
+
 
 
 @Component({
@@ -8,8 +10,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ui';
+  accountId:number = 1
+  accountInfo = {}
+  totalCash = 0
 
+  constructor(private typicodeService:TypicodeService) {
 
-  constructor() {}
+    this.setAccount();
+    
+  }
+
+  setAccount(){
+    this.typicodeService.getAccountByIdApi(this.accountId)
+    .subscribe( (data) => {
+      this.accountInfo = data
+    });
+  }
+  
   
 }
