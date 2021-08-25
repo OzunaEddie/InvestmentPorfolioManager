@@ -2,7 +2,12 @@
   <mat-drawer-container class="drawer-container">
     <mat-drawer class="drawer-content" mode="side" opened>
       <app-sidebar [accountInfo]="accountInfo"></app-sidebar>
+      <app-sidebar></app-sidebar>
     </mat-drawer>
-    <mat-drawer-content style="text-align: center;">Main content</mat-drawer-content>
+    <mat-drawer-content style="text-align: center;">  
+      Main content
+      <app-net-worth></app-net-worth>
+      <!-- other content goes here -->
+    </mat-drawer-content>
   </mat-drawer-container>
 </article>
