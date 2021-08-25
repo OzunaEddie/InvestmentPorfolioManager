@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { NetWorthComponent } from './net-worth/net-worth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
+    NetWorthComponent,
   ],
   imports: [
     BrowserModule,
