@@ -4,7 +4,7 @@
       <app-sidebar [accountInfo]="accountInfo" [totalCash]="totalCash" [totalInvestment]="totalInvestment" [netWorth]="netWorth"></app-sidebar>
     </mat-drawer>
     <mat-drawer-content style="text-align: center;">  
-      <app-net-worth></app-net-worth>
+      <app-net-worth [netWorth]='netWorth'></app-net-worth>
       <app-market-mover></app-market-mover>
       <app-insight></app-insight>
       <app-cash-flow></app-cash-flow>

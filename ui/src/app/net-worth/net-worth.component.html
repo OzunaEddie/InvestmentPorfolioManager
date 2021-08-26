@@ -1,3 +1,14 @@
-<p>net-worth works!</p>
-<!-- <canvas #canvas width="600" height="300"></canvas> -->
-<ngx-bar-chart [chartData]='chartData' [chartOptions]='chartOptions' [view]='barView' ></ngx-bar-chart>
+<section class="netWorthSection">
+    <ngx-charts-area-chart
+        [legend]="legend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxis]="xAxis"
+        [yAxis]="yAxis"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [timeline]="timeline"
+        [results]="multi">
+  </ngx-charts-area-chart>
+</section>
+<!-- <p>{{netWorth}}</p> -->
