@@ -1,8 +1,9 @@
 <div class="cash-flow-main-div">
   <h1 class="cash-flow-title">Cash Flow<span class="alignRight"> {{ 1000 | currency}}</span></h1>
   <div class="div_separator"></div>
+  <span class="cash-flow-subscript">LAST 30 DAYS</span>
     <section class="cash-flow-section">
-      <ngx-charts-pie-chart
+        <ngx-charts-pie-chart
         [view]="view"
         [results]="single"
         [gradient]="gradient"
@@ -11,7 +12,6 @@
         [doughnut]="isDoughnut"
         >
       </ngx-charts-pie-chart>
-      
       <ngx-charts-pie-chart
         [view]="view"
         [results]="single"

@@ -13,9 +13,11 @@
 
 
 .cash-flow-main-div {
-    margin-top: 71px;
+    margin-top: 400px;
     text-align: left;
     width: 61.9% !important;
+    position: absolute;
+    
 }
 
 .cash-flow-title{
@@ -23,8 +25,19 @@
     font-weight: bold;
     font-size: 2em;
 }
-
 .alignRight{
     float: right;
     margin-right: -82px;
+}
+.cash-flow-section {
+    display: flex;
+    margin-left: 200px;
+    margin-top: -20px;
+    justify-content: space-between;
+}
+
+.cash-flow-subscript{
+    margin-left: 80px;
+    color: #696969;
+    font-weight: bold;
 }

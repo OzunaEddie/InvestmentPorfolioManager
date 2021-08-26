@@ -25,9 +25,7 @@ export class NetWorthComponent  {
   yAxisLabel!: string 
   timeline!: boolean 
   maxXAxisTickLength!:number;
-  colorScheme = {
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
-  };
+  colorScheme!:any;
 
   constructor() {
     
@@ -88,8 +86,6 @@ export class NetWorthComponent  {
   this.colorScheme = {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
   };
-
-
 
 }
 
