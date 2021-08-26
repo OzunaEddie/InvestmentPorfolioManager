@@ -15,6 +15,7 @@ export class AppComponent {
   totalCash = 0;
   totalInvestment = 0;
   netWorth = 0;
+  income = 0;
 
   constructor(private typicodeService:TypicodeService) {
 
@@ -26,6 +27,7 @@ export class AppComponent {
     this.typicodeService.getAccountByIdApi(this.accountId)
     .subscribe( (data) => {
       this.accountInfo = data
+      this.income = this.accountInfo['income']
       this.accountInfo['bankAccount'].forEach((element: any) => {
         this.totalCash += element['cashValue'];
         

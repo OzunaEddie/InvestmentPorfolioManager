@@ -7,7 +7,7 @@ import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cash-flow.component.css']
 })
 export class CashFlowComponent {
-  @Input() cashFlow:any;
+  @Input() income:any;
   single!: any[];
   view:any = [];
 
