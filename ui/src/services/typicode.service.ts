@@ -31,11 +31,11 @@ export class TypicodeService {
   }
 
   getMostGainer(){
-    return this.http.get("https://financialmodelingprep.com/api/v3/gainers?apikey=856858a8a5486d32a6f07b02224ac83f")
+    return this.http.get("https://financialmodelingprep.com/api/v3/gainers?apikey=15ed8cd2b659685092b6f36aeb219685")
   }
 
   getMostLoser(){
-    return this.http.get("https://financialmodelingprep.com/api/v3/losers?apikey=856858a8a5486d32a6f07b02224ac83f")
+    return this.http.get("https://financialmodelingprep.com/api/v3/losers?apikey=15ed8cd2b659685092b6f36aeb219685")
   }
 
 }

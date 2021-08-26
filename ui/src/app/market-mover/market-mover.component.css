@@ -61,3 +61,7 @@
     margin-right: 55px;
     float: right;
 }
+
+.tap-btn span {
+    color: rgb(0, 59, 112);
+}

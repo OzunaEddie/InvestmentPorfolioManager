@@ -8,6 +8,8 @@ import { TypicodeService } from 'src/services/typicode.service';
 })
 export class MarketMoverComponent implements OnInit {
 
+  topGainerList:any = []
+
   constructor(private typicodeService:TypicodeService) {
     
   }

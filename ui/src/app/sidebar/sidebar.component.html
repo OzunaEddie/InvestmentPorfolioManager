@@ -25,13 +25,13 @@
   <section>
     <button class="side-btn" mat-button color="primary" (click)="getInvestmentList()">
       INVESTMENT
-      <span class="alignRight">{{ 100  | currency }}</span>
+      <span class="alignRight">{{ totalInvestment  | currency }}</span>
     </button>
     <aside *ngIf="displayInvestmentList">
-      <div class="side-main-btn" *ngFor="let item of investmentList">
+      <div class="side-main-btn" *ngFor="let item of investmentList; let i=index">
         <button class="side-content-btn" mat-button color="basic">
           {{item.symbol}}
-          <span class="alignRight">{{item.value  | currency}}</span><br>
+          <span class="alignRight">{{item.value * shareCountList[i] | currency}}</span><br>
           <span class="side-subscript">{{item.company}}</span>
         </button>
         <div class="div_separator"></div>

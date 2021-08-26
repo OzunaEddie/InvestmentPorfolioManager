@@ -28,8 +28,13 @@ export class AppComponent {
       this.accountInfo = data
       this.accountInfo['bankAccount'].forEach((element: any) => {
         this.totalCash += element['cashValue'];
+        
       });
-      this.netWorth += this.totalCash
+      this.accountInfo['portfolio'].forEach((element: any) => {
+        this.totalInvestment += (element['value'] * element['shareCount']);
+        
+      });
+      this.netWorth = this.totalCash + this.totalInvestment
     });
   }
   

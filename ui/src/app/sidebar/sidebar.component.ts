@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
   bankApiCallMade = false;
   investmentList:any = [];
   bankAccountList:any = [];
-
+  shareCountList:any = []
   constructor(private typicodeService:TypicodeService){}
 
   ngOnInit(): void {
@@ -30,12 +30,14 @@ export class SidebarComponent implements OnInit {
     this.displayInvestmentList = !this.displayInvestmentList;
     console.log(this.accountInfo)
     if(this.displayInvestmentList && !this.investmentApiCallMade){
-      this.accountInfo['portfolio'].forEach((element: any, index: any) => {
+      this.accountInfo['portfolio'].forEach((element: any, index: number) => {
+
+        
         if(element['typeOfInstrument'] == "stock"){
           this.typicodeService.getStockByIdApi(element['instruments']['instrumentId'])
           .subscribe( (data) => {
             this.investmentList.push(data);
-            this.totalInvestment += this.investmentList[index]['value'];
+            this.shareCountList.push(element['shareCount'])
           });
         }
 
@@ -43,6 +45,7 @@ export class SidebarComponent implements OnInit {
           this.typicodeService.getBondByIdApi(element['instruments']['instrumentId'])
           .subscribe( (data) => {
             this.investmentList.push(data);
+            this.shareCountList.push(element['shareCount'])
           });
         }
 
@@ -50,9 +53,10 @@ export class SidebarComponent implements OnInit {
           this.typicodeService.getEtfByIdApi(element['instruments']['instrumentId'])
           .subscribe( (data) => {
             this.investmentList.push(data);
+            this.shareCountList.push(element['shareCount'])
+            
           });
         }
-
       });
       this.investmentApiCallMade = true;
     }
