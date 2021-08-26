@@ -28,12 +28,14 @@ export class SidebarComponent implements OnInit {
 
   getInvestmentList(){
     this.displayInvestmentList = !this.displayInvestmentList;
+    console.log(this.accountInfo)
     if(this.displayInvestmentList && !this.investmentApiCallMade){
-      this.accountInfo['portfolio'].forEach((element: any) => {
+      this.accountInfo['portfolio'].forEach((element: any, index: any) => {
         if(element['typeOfInstrument'] == "stock"){
           this.typicodeService.getStockByIdApi(element['instruments']['instrumentId'])
           .subscribe( (data) => {
             this.investmentList.push(data);
+            this.totalInvestment += this.investmentList[index]['value'];
           });
         }
 

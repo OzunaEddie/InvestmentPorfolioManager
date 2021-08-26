@@ -25,7 +25,6 @@ export class AppComponent {
   setAccount(){
     this.typicodeService.getAccountByIdApi(this.accountId)
     .subscribe( (data) => {
-      console.log(data)
       this.accountInfo = data
       this.accountInfo['bankAccount'].forEach((element: any) => {
         this.totalCash += element['cashValue'];
