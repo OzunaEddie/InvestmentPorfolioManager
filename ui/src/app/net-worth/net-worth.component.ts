@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewChecked } from '@angular/core';
 import { BarChartOption, ChartData, ChartView } from 'ngx-chart';
 
 @Component({
@@ -6,32 +6,52 @@ import { BarChartOption, ChartData, ChartView } from 'ngx-chart';
   templateUrl: './net-worth.component.html',
   styleUrls: ['./net-worth.component.css']
 })
-export class NetWorthComponent implements OnInit {
+export class NetWorthComponent implements AfterViewChecked, OnInit {
+
+  @Input() netWorth:any;
+  chartData: ChartData[] = [];
+  chartOptions!: BarChartOption;
+  barView!: ChartView;
+
   
-    chartData: ChartData[] = [
-    { name: "India", value: 20, color: "#61b15a" },
+
+
+
+
+  constructor() {
+    
+   }
+
+  ngOnInit(): void {
+
+    //console.log(this.netWorth, "here");
+  }
+
+  ngAfterViewChecked() {
+    //console.log(this.netWorth, "here");
+  }
+
+  ngOnChanges() {
+    this.displayNetWorthChartData()
+  }
+
+  displayNetWorthChartData() {
+      this.chartData = [
+    { name: "India", value: 1, color: "#61b15a" },
     { name: "Nepal", value: 5, color: "#adce74" },
-    { name: "USA", value: 1, color: "#fff76a" },
-    { name: "UK", value: 2, color: "#ffce89" },
-    { name: "Brazil", value: 7, color: "#d8f8b7" }
+    
   ];
-  chartOptions: BarChartOption = {
+  this.chartOptions = {
     roundedCorners: false,
     showLegend: true,
     legendTitle: 'Total',
     isHorizontal: false
   }
-  barView: ChartView = {
+  this.barView = {
     height: 400,
     width: 400
   }
-
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+}
 
 }
 
