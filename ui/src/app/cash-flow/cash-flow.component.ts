@@ -9,7 +9,7 @@ import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 export class CashFlowComponent {
   @Input() cashFlow:any;
   single!: any[];
-  view: [number, number] = [700, 400];
+  view:any = [];
 
   // options
   gradient!: boolean;
@@ -47,12 +47,12 @@ export class CashFlowComponent {
         "value": 6200000
       }
     ];
-    this.view = [700, 400];
+    this.view = [300, 300];
     this.gradient = true;
     this.showLegend = false;
     this.showLabels = false;
-    this.isDoughnut = false;
-    this.label = ""
+    this.isDoughnut = true;
+    this.label = "Income"
     this.colorScheme = {
       domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
     };

@@ -1,14 +1,26 @@
-<section>
-  <ngx-charts-advanced-pie-chart
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="single"
-  [label]="label"
-  [gradient]="gradient"
-  (valueFormatting)="valueFormatting"
-  (select)="onSelect($event)"
-  (activate)="onActivate($event)"
-  (deactivate)="onDeactivate($event)"
-  >
-</ngx-charts-advanced-pie-chart>
-</section>
+<div class="cash-flow-main-div">
+  <h1 class="cash-flow-title">Cash Flow<span class="alignRight"> {{ 1000 | currency}}</span></h1>
+  <div class="div_separator"></div>
+    <section class="cash-flow-section">
+      <ngx-charts-pie-chart
+        [view]="view"
+        [results]="single"
+        [gradient]="gradient"
+        [legend]="showLegend"
+        [labels]="showLabels"
+        [doughnut]="isDoughnut"
+        >
+      </ngx-charts-pie-chart>
+      
+      <ngx-charts-pie-chart
+        [view]="view"
+        [results]="single"
+        [gradient]="gradient"
+        [legend]="showLegend"
+        [labels]="showLabels"
+        [doughnut]="isDoughnut"
+        >
+      </ngx-charts-pie-chart>
+    </section>
+</div>
+
