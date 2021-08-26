@@ -63,6 +63,7 @@ CREATE TABLE portfolio (
                            shareCount INT,
                            date DATE NOT NULL,
                            typeOfInstrument VARCHAR(200) NOT NULL,
+                           value INT NOT NULL,
                            PRIMARY KEY (portfolioId),
                            FOREIGN KEY (accountId) REFERENCES account(accountId),
                            FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
@@ -72,12 +73,6 @@ INSERT INTO account (firstName, lastName, income) VALUES ('Eddie','Ozuna', 30000
 INSERT INTO account (firstName, lastName, income) VALUES ('Jonathan','Erquingo', 700000);
 INSERT INTO account (firstName, lastName, income) VALUES ('TKeya','Stevens', 800000);
 
-INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("Citi", 500000, "Savings", 1);
-INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("Chase", 600000, "Savings", 2);
-INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("TD Bank", 700000, "Savings", 3);
-INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("Citi", 80000000, "Checkings", 1);
-INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("Chase", 8000000, "Checkings", 2);
-INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("TD Bank", 80000000, "Checkings", 3);
 
 
 INSERT INTO instrument (quote) VALUES (200);
@@ -110,16 +105,16 @@ INSERT INTO etf (etfid, value, symbol, company) VALUES (11, 600, 'VTI', 'Vanguar
 INSERT INTO etf (etfid, value, symbol, company) VALUES (12, 250, 'SPY', 'SPDR S&P 500 ETF');
 INSERT INTO etf (etfid, value, symbol, company) VALUES (13, 450, 'VTWO', 'Vanguard Russel ETF');
 
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(1, 1, 20, "bond", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(2, 2, 10, "bond", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(1, 3, 20, "bond", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(3, 4, 10, "bond", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(1, 5, 20, "bond", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(2, 6, 10, "stock", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(3, 7, 20, "stock", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(2, 8, 10, "stock", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(1, 9, 20, "stock", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(2, 10, 10, "stock", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(1, 11, 10, "etf", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(2, 12, 17, "etf", CURDATE());
-INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, date) VALUES(3, 13, 14, "etf", CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(1, 1, 1, "bond", 150000, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(2, 2, 1, "bond", 200000, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(1, 3, 1, "bond", 300000, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(3, 4, 1, "bond", 400000, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(1, 5, 1, "bond", 500000, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(2, 6, 10, "stock", 100.83, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(3, 7, 20, "stock", 520.17, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(2, 8, 10, "stock", 149.91, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(1, 9, 20, "stock", 173.80, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(2, 10, 10, "stock", 104.86, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(1, 11, 10, "etf", 600, CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(2, 12, 17, "etf", 250,  CURDATE());
+INSERT INTO portfolio (accountId, instrumentId, shareCount, typeOfInstrument, value, date) VALUES(3, 13, 14, "etf", 450, CURDATE());
