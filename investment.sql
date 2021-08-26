@@ -73,7 +73,12 @@ INSERT INTO account (firstName, lastName, income) VALUES ('Eddie','Ozuna', 30000
 INSERT INTO account (firstName, lastName, income) VALUES ('Jonathan','Erquingo', 700000);
 INSERT INTO account (firstName, lastName, income) VALUES ('TKeya','Stevens', 800000);
 
-
+INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("Citi", 500000, "Savings", 1);
+INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("Chase", 600000, "Savings", 2);
+INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("TD Bank", 700000, "Savings", 3);
+INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("Citi", 80000000, "Checkings", 1);
+INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("Chase", 8000000, "Checkings", 2);
+INSERT INTO bankaccount (bankName, cashValue, accountType, accountId) VALUES ("TD Bank", 80000000, "Checkings", 3);
 
 INSERT INTO instrument (quote) VALUES (200);
 INSERT INTO instrument (quote) VALUES (400);
