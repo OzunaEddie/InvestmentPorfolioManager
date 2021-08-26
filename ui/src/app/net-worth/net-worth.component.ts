@@ -84,7 +84,7 @@ export class NetWorthComponent  {
     this.maxXAxisTickLength = 3
 
   this.colorScheme = {
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+    domain: ['#003b70', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
   };
 
 }
