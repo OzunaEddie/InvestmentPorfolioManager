@@ -176,7 +176,7 @@ export class NetWorthComponent  {
         ]
       },
     ],
-    this.views = [1110, 450]
+    this.views = [1040, 450]
     //break
     this.legend = false;
     this.showLabels = true;
