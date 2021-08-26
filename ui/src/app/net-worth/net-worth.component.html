@@ -1,5 +1,5 @@
 <div class="net-worth-main-div">
-  <h1 class="networth-title">Net Worth <span class="alignRight"> {{ 1000 | currency}}</span></h1>
+  <h1 class="networth-title">Net Worth <span class="alignRight"> {{ netWorth | currency}}</span></h1>
   <div class="div_separator"></div>
   <span class="networth-subscript">LAST 30 DAYS</span>
     <section class="netWorthSection">
@@ -7,6 +7,7 @@
             [maxXAxisTickLength]="maxXAxisTickLength"
             [view]="views"
             [legend]="legend"
+            [scheme]="colorScheme"
             [showXAxisLabel]="showXAxisLabel"
             [showYAxisLabel]="showYAxisLabel"
             [xAxis]="xAxis"
