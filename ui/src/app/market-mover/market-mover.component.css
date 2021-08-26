@@ -28,7 +28,7 @@
 }
 
 .market-main {
-   
+    
     text-align: left;
 }
 
@@ -36,4 +36,18 @@
    
     color: #696969;
     font-weight: bold;
+}
+
+.market-title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.alignLeft{
+    float: left;
+}
+
+.alignRight{
+    margin-right: 55px;
+    float: right;
 }

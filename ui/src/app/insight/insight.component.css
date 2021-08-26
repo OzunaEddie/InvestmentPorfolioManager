@@ -1,0 +1,30 @@
+.main-insight-div{
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1.4%;
+}
+
+
+.div_separator {
+    border-bottom: 2px solid #dddddd;
+    width: 88%;
+    margin-bottom: 10px !important;
+}
+
+.insight-title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.insight-main {
+   
+    text-align: left;
+}
+
+.market-subscript{
+   
+    color: #696969;
+    font-weight: bold;
+}
