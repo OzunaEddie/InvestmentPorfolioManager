@@ -1,14 +1,21 @@
-<section class="netWorthSection">
-    <ngx-charts-area-chart
-        [legend]="legend"
-        [showXAxisLabel]="showXAxisLabel"
-        [showYAxisLabel]="showYAxisLabel"
-        [xAxis]="xAxis"
-        [yAxis]="yAxis"
-        [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel"
-        [timeline]="timeline"
-        [results]="multi">
-  </ngx-charts-area-chart>
-</section>
-<!-- <p>{{netWorth}}</p> -->
+<div class="net-worth-main-div">
+  <h1 class="networth-title">Net Worth <span class="alignRight"> {{ 1000 | currency}}</span></h1>
+  <div class="div_separator"></div>
+    <section class="netWorthSection">
+        <ngx-charts-area-chart class="area-chart"
+            [maxXAxisTickLength]="maxXAxisTickLength"
+            [view]="views"
+            [legend]="legend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxis]="xAxis"
+            [yAxis]="yAxis"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [timeline]="timeline"
+            [results]="multi"
+            >
+      </ngx-charts-area-chart>
+    </section>
+</div>
+

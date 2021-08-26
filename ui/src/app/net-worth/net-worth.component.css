@@ -1,41 +1,30 @@
 @import "~ngx-chart/styles.scss";
 
-/* .netWorthSection {
+.area-chart {
+    margin-top: 200px;
+}
+
+.div_separator {
+    border-bottom: 2px solid #dddddd;
     width: 100%;
-    height: 100%;
-} */
-
-
-
-/*
-.barGraph {
-    /* display: flex; */
-    /* margin: auto;
-    width: 50%; */
-    /* height: 100px !important;
-display: flex !important;
-justify-content: center !important;
-margin-left: 20 !important;
-margin-left: 30% !important;
-margin-right: 30% !important;
-height: 100% !important;
+    margin-bottom: 10px !important;
+    margin-left: 84px;
 }
 
-#lines {
-    height: 100% !important;
+
+.net-worth-main-div {
+    margin-top: 71px;
+    text-align: left;
+    width: 61.9% !important;
 }
 
-.chart-view .ngx-bar  {
-
-
-height: 40% !important;
-display: flex !important;
-justify-content: center !important;
-margin-left: 20 !important;
-margin-left: 30% !important;
-margin-right: 30% !important;
+.networth-title{
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 2em;
 }
- */
 
-
-
+.alignRight{
+    float: right;
+    margin-right: -82px;
+}
