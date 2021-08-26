@@ -18,15 +18,18 @@ public class Instrument implements Serializable {
     @Column(name = "quote")
     private Double quote;
 
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "instrumentid")
+    private Etf etf;
+
     @OneToMany(mappedBy = "instrument", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private Set<Portfolio> portfolio;
 
-    @OneToOne(mappedBy = "instrument")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "instrumentid")
     private Bond bond;
-
-    @OneToOne(mappedBy = "instrument")
-    private Etf etf;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instrumentid")

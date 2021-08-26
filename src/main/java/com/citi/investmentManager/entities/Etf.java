@@ -18,8 +18,7 @@ public class Etf implements Serializable {
     @Column(name = "etfid")
     private Integer etfId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "instrumentid")
+    @OneToOne(mappedBy = "etf")
     private Instrument instrument;
     @Column(name = "value")
     private Double value;
