@@ -1,5 +1,5 @@
 import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
-import { ChartData, ChartOption, PieChartView } from 'ngx-chart';
+
 
 @Component({
   selector: 'app-cash-flow',
@@ -17,17 +17,15 @@ export class CashFlowComponent {
   showLabels!: boolean;
   isDoughnut!: boolean;
   legendPosition!: string;
-
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
-  };
+  label!:string;
+  colorScheme: any;
 
   constructor() {
-
+    this.displayCashFlowChart()
   }
 
   ngOnChanges() {
-    this.displayCashFlowChart()
+    
   }
 
   displayCashFlowChart() {
@@ -51,10 +49,31 @@ export class CashFlowComponent {
     ];
     this.view = [700, 400];
     this.gradient = true;
-    this.showLegend = true;
-    this.showLabels = true;
+    this.showLegend = false;
+    this.showLabels = false;
     this.isDoughnut = false;
+    this.label = ""
+    this.colorScheme = {
+      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    };
     
+  }
+
+  valueFormatting(value:any) {
+    value=false;
+
+  }
+
+  onSelect(data: any): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
+
+  onActivate(data: any): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data: any): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 
 }
