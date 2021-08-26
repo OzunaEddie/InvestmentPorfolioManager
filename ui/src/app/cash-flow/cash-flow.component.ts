@@ -18,7 +18,8 @@ export class CashFlowComponent {
   isDoughnut!: boolean;
   legendPosition!: string;
   label!:string;
-  colorScheme: any;
+  incomeColorScheme: any;
+  spendColorScheme: any;
 
   constructor() {
     this.displayCashFlowChart()
@@ -52,9 +53,15 @@ export class CashFlowComponent {
     this.showLegend = false;
     this.showLabels = false;
     this.isDoughnut = true;
-    this.label = "Income"
-    this.colorScheme = {
-      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    this.label = ""
+   
+    // top right, bottom right, bottom left, top left
+    this.incomeColorScheme = {
+      domain: ['#010358', '#bad4ff', '#365b98', '#7dd2ff']
+    };
+    
+    this.spendColorScheme = {
+      domain: ['#ff9514', '#8f1818', '#ff5900', '#d81c1c']
     };
     
   }
