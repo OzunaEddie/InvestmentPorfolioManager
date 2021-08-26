@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface BankAccountService{
     Collection<BankAccount> getAllBankAccounts();
     Optional<BankAccount> getBankAccountById(Integer id);
+    void deleteBankAccount(BankAccount bankAccount);
 
 
 }
