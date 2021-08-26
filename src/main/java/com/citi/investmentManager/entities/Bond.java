@@ -11,8 +11,7 @@ public class Bond implements Serializable {
     @Column(name = "bondid")
     private Integer bondId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "instrumentid")
+    @OneToOne(mappedBy = "bond")
     private Instrument instrument;
 
     @Column(name = "value")
