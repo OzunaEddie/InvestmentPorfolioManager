@@ -22,7 +22,7 @@ public class BankAccount implements Serializable {
 
     // not sure if we need to make getters and setters for different operations for the project
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "accountid")
     private Account account;
 

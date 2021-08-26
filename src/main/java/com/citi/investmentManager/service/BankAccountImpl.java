@@ -27,7 +27,7 @@ public class BankAccountImpl implements BankAccountService {
     }
 
     @Override
-    public void deleteBankAccount(BankAccount bankAccount) {
-        repository.delete(bankAccount);
+    public void deleteBankAccountById(Integer id) {
+        repository.deleteById(id);
     }
 }
