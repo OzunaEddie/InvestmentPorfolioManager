@@ -27,6 +27,16 @@
     
 }
 
+.gainer-list span {
+    color: green;
+    font-weight: bold;
+}
+
+.loser-list span {
+    color: rgb(217, 38, 28);
+    font-weight: bold;
+}
+
 .market-main {
     
     text-align: left;

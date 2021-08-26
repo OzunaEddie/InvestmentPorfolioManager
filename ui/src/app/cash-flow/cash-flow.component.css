@@ -25,6 +25,11 @@
     font-weight: bold;
     font-size: 2em;
 }
+
+.cash-flow-title span {
+    color: rgb(0, 59, 112);
+}
+
 .alignRight{
     float: right;
     margin-right: -82px;
