@@ -1,26 +1,36 @@
 <div class="cash-flow-main-div">
-  <h1 class="cash-flow-title">Cash Flow<span class="alignRight"> {{ 1000 | currency}}</span></h1>
+  <h1 class="cash-flow-title">Cash Flow<span class="alignRight"> {{ 53890-16367 | currency}}</span></h1>
   <div class="div_separator"></div>
   <span class="cash-flow-subscript">LAST 30 DAYS</span>
     <section class="cash-flow-section">
-        <ngx-charts-pie-chart
-        [view]="view"
-        [results]="single"
-        [gradient]="gradient"
-        [legend]="showLegend"
-        [labels]="showLabels"
-        [doughnut]="isDoughnut"
-        >
+      <div class="pie-chart">
+        <h3 id="pie-chart-title" class="pie-chart-label">Income</h3>
+        <span id="income-chart" class="pie-chart-label">{{53890 |currency}}</span>
+          <ngx-charts-pie-chart
+            [view]="view"
+            [results]="single"
+            [gradient]="gradient"
+            [legend]="showLegend"
+            [labels]="showLabels"
+            [doughnut]="isDoughnut"
+            [scheme]="incomeColorScheme"
+          >
+          </ngx-charts-pie-chart>
+        </div>
+        <div class="pie-chart">
+        <h3 id="pie-chart-title" class="pie-chart-lable">Spending</h3>
+        <span id="spend-chart" class="pie-chart-label">{{16367 |currency}}</span>
+          <ngx-charts-pie-chart
+            [view]="view"
+            [results]="single"
+            [gradient]="gradient"
+            [legend]="showLegend"
+            [labels]="showLabels"
+            [doughnut]="isDoughnut"
+            [scheme]="spendColorScheme"
+          >
       </ngx-charts-pie-chart>
-      <ngx-charts-pie-chart
-        [view]="view"
-        [results]="single"
-        [gradient]="gradient"
-        [legend]="showLegend"
-        [labels]="showLabels"
-        [doughnut]="isDoughnut"
-        >
-      </ngx-charts-pie-chart>
+        </div>
     </section>
 </div>
 
