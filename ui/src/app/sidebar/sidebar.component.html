@@ -25,7 +25,7 @@
   <section>
     <button class="side-btn" mat-button color="primary" (click)="getInvestmentList()">
       INVESTMENT
-      <span class="alignRight">{{ 1000  | currency }}</span>
+      <span class="alignRight">{{ 100  | currency }}</span>
     </button>
     <aside *ngIf="displayInvestmentList">
       <div class="side-main-btn" *ngFor="let item of investmentList">

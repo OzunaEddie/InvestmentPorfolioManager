@@ -30,4 +30,12 @@ export class TypicodeService {
     return this.http.get(`./api/etf/${etfId}`);
   }
 
+  getMostGainer(){
+    return this.http.get("https://financialmodelingprep.com/api/v3/gainers?apikey=856858a8a5486d32a6f07b02224ac83f")
+  }
+
+  getMostLoser(){
+    return this.http.get("https://financialmodelingprep.com/api/v3/losers?apikey=856858a8a5486d32a6f07b02224ac83f")
+  }
+
 }

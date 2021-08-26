@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TypicodeService } from 'src/services/typicode.service';
 
 @Component({
   selector: 'app-market-mover',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarketMoverComponent implements OnInit {
 
-  constructor() { }
+  constructor(private typicodeService:TypicodeService) {
+    
+  }
 
   ngOnInit(): void {
+    this.getMostGainer()
+    this.getMostLost()
+  }
+
+  getMostGainer(){
+    this.typicodeService.getMostGainer().subscribe( (data) => {
+      console.log(data)
+    });
+  }
+
+  getMostLost(){
+    this.typicodeService.getMostLoser().subscribe( (data) => {
+      console.log(data)
+    });
   }
 
 }
