@@ -34,11 +34,36 @@
     float: right;
     margin-right: -82px;
 }
+
+.pie-chart {
+    text-align: center;
+}
+
+#pie-chart-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: rgba(106,179,217,6);
+}
+
+.pie-chart-label {
+    text-align: center;
+    font-weight: bold;
+}
+
+#income-chart {
+    color: green;
+}
+
+#spend-chart {
+    color: red;
+}
+
 .cash-flow-section {
     display: flex;
     margin-left: 200px;
     margin-top: -20px;
     justify-content: space-between;
+    justify-items: center;
 }
 
 .cash-flow-subscript{
