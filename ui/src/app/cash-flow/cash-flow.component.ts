@@ -1,5 +1,5 @@
 import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
-import { pieIncome } from './acc-1';
+import { pieIncome, } from './acc-1';
 
 @Component({
   selector: 'app-cash-flow',

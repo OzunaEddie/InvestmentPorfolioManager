@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TypicodeService } from 'src/services/typicode.service';
-
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { TypicodeService } from 'src/services/typicode.service';
 })
 export class AppComponent {
 
-  accountId:any;
+  accountId:any = 1;
   title = 'ui';
   accountInfo:any = {};
   totalCash = 0;
@@ -18,21 +18,26 @@ export class AppComponent {
   netWorth = 0;
   income = 0;
 
-  constructor(private typicodeService:TypicodeService) {
+  constructor(private typicodeService:TypicodeService, private cookieService: CookieService) {
 
-    this.setAccountId(1);
+    this.setAccountId(this.cookieService.get( 'id'))
+    this.getAccountInfo()
     
   }
 
 
+  setAccountId(accountId: any){
+    this.cookieService.set( 'id',accountId)
+  }
   
 
-  setAccountId(accountId: any):void {
+  getAccountInfo():void {
+    
+    this.accountId = this.cookieService.get( 'id')
     this.totalCash = 0;
     this.totalInvestment = 0;
-    this.accountId = accountId;
     console.log(this.accountId)
-    console.log(accountId)
+    console.log(this.accountId )
     this.typicodeService.getAccountByIdApi(this.accountId)
     .subscribe( (data) => {
       this.accountInfo = data

@@ -14,6 +14,7 @@ import { CashFlowComponent } from './cash-flow/cash-flow.component';
 import { FormsModule } from '@angular/forms';
 //import { NgxChartModule } from 'ngx-chart';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     NgxChartsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

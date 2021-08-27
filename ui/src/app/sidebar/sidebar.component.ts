@@ -30,7 +30,7 @@ export class SidebarComponent implements OnInit {
 
   onSubmit(accountId:any){
     this.sendToRoot.emit(this.accountId)
-    
+    window.location.reload()
     
   }
   
