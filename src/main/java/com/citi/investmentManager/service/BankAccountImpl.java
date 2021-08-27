@@ -25,4 +25,9 @@ public class BankAccountImpl implements BankAccountService {
     public Optional<BankAccount> getBankAccountById(Integer id) {
         return repository.findById(id);
     }
+
+    @Override
+    public void deleteBankAccountById(Integer id) {
+        repository.deleteById(id);
+    }
 }

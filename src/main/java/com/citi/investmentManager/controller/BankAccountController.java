@@ -25,4 +25,9 @@ public class BankAccountController {
     public Optional<BankAccount> getBankAccountById(@PathVariable Integer id) {
         return bankAccountService.getBankAccountById(id);
     }
+
+    @DeleteMapping(path = "/{id}")
+    public void deleteBankAccountById(@PathVariable Integer id) {
+         bankAccountService.deleteBankAccountById(id);
+    }
 }
