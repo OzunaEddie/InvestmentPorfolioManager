@@ -15,20 +15,20 @@ export class MarketMoverComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getMostGainer()
-    this.getMostLost()
+    // this.getMostGainer()
+    // this.getMostLost()
   }
 
-  getMostGainer(){
-    this.typicodeService.getMostGainer().subscribe( (data) => {
-      console.log(data)
-    });
-  }
+  // getMostGainer(){
+  //   this.typicodeService.getMostGainer().subscribe( (data) => {
+  //     console.log(data)
+  //   });
+  // }
 
-  getMostLost(){
-    this.typicodeService.getMostLoser().subscribe( (data) => {
-      console.log(data)
-    });
-  }
+  // getMostLost(){
+  //   this.typicodeService.getMostLoser().subscribe( (data) => {
+  //     console.log(data)
+  //   });
+  // }
 
 }
