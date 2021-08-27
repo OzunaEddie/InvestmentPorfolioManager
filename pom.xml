@@ -55,7 +55,7 @@
 							<outputDirectory>${build.directory}/classes/static/</outputDirectory >
 							<resources>
 								<resource>
-									<directory>./ui/dist</directory>
+									<directory>../ui/dist</directory>
 								</resource>
 							</resources>
 						</configuration>
