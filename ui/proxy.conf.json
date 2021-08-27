@@ -1,8 +1,8 @@
 {
     "/api": {
       "target": "http://investment-investment.namdevops16.conygre.com/api",
-      "secure": false,
-      "changeOrigin": false,
+      "secure": true,
+      "changeOrigin": true,
       "pathRewrite": {
         "^/api": ""
       }
