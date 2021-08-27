@@ -36,15 +36,19 @@ export class CashFlowComponent {
     this.pieSpend =  [
       {
         "name": "FXNAX",
-        "value": 8940000
+        "value": 134.22
       },
       {
         "name": "DODGX",
-        "value": 5000000
+        "value": 233.43
       },
       {
         "name": "VWEHX",
-        "value": 7200000
+        "value": 90.51
+      },
+      {
+        "name": "AGG",
+        "value": 111.20
       }
     ];
     this.view = [300, 300];
