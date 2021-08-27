@@ -1,5 +1,5 @@
 import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
-
+import { pieIncome } from './acc-1';
 
 @Component({
   selector: 'app-cash-flow',
@@ -8,7 +8,8 @@ import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 })
 export class CashFlowComponent {
   @Input() income:any;
-  single!: any[];
+  pieSpend!: any[];
+  pieIncome!: any[];
   view:any = [];
 
   // options
@@ -30,22 +31,20 @@ export class CashFlowComponent {
   }
 
   displayCashFlowChart() {
-    this.single =  [
+    Object.assign(this, {pieIncome});
+    
+    this.pieSpend =  [
       {
-        "name": "Germany",
+        "name": "FXNAX",
         "value": 8940000
       },
       {
-        "name": "USA",
+        "name": "DODGX",
         "value": 5000000
       },
       {
-        "name": "France",
+        "name": "VWEHX",
         "value": 7200000
-      },
-        {
-        "name": "UK",
-        "value": 6200000
       }
     ];
     this.view = [300, 300];
