@@ -43,7 +43,7 @@ export class SidebarComponent implements OnInit {
       this.bankApiCallMade = false;
       this.investmentList = []
       this.bankAccountList = []
-      
+      this.shareCountList = []
     }
     
   }
