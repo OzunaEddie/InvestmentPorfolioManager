@@ -28,3 +28,20 @@
     color: #696969;
     font-weight: bold;
 }
+
+.insight-one {
+    font-size: 1em;
+    width: 80%;
+}
+.insight-two {
+    font-size: 1em;
+    width: 80%;
+}
+.insight-three {
+    font-size: 1em;
+    width: 80%;
+}
+.insight-span{
+    color: rgb(0, 59, 112);
+    font-weight: bold;
+}
