@@ -11,6 +11,7 @@ import { NetWorthComponent } from './net-worth/net-worth.component';
 import { InsightComponent } from './insight/insight.component';
 import { MarketMoverComponent } from './market-mover/market-mover.component';
 import { CashFlowComponent } from './cash-flow/cash-flow.component';
+import { FormsModule } from '@angular/forms';
 //import { NgxChartModule } from 'ngx-chart';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
@@ -30,7 +31,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatSidenavModule,
     MatButtonModule,
     HttpClientModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

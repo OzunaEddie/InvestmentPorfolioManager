@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TypicodeService } from 'src/services/typicode.service';
 
 
@@ -9,8 +9,9 @@ import { TypicodeService } from 'src/services/typicode.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  accountId:any;
   title = 'ui';
-  accountId:number = 1;
   accountInfo:any = {};
   totalCash = 0;
   totalInvestment = 0;
@@ -19,11 +20,14 @@ export class AppComponent {
 
   constructor(private typicodeService:TypicodeService) {
 
-    this.setAccount();
+    this.setAccountId(1);
     
   }
 
-  setAccount(){
+  setAccountId(accountId: any):void {
+    this.accountId = accountId;
+    console.log(this.accountId)
+    console.log(accountId)
     this.typicodeService.getAccountByIdApi(this.accountId)
     .subscribe( (data) => {
       this.accountInfo = data
@@ -39,6 +43,6 @@ export class AppComponent {
       this.netWorth = this.totalCash + this.totalInvestment
     });
   }
-  
+
   
 }

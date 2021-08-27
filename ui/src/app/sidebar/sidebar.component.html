@@ -1,6 +1,9 @@
 <div class="side-sections">
+  <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm.value)">
+    Account ID: <input class="form-control" [(ngModel)]="accountId" name="accountId" type="text" placeholder="Account Id" required>
+    <button type="submit" class="submit-btn alignRight">Submit</button>
+  </form>
   <div class="side-networth">
-    <img class="citi-logo" src="./assets/citilogo.png" alt="Citi Logo"><br>
     Hello, {{accountInfo['firstName']}} {{accountInfo['lastName']}}
     <p><br>
       NET WORTH
