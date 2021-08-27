@@ -24,7 +24,12 @@ export class AppComponent {
     
   }
 
+
+  
+
   setAccountId(accountId: any):void {
+    this.totalCash = 0;
+    this.totalInvestment = 0;
     this.accountId = accountId;
     console.log(this.accountId)
     console.log(accountId)

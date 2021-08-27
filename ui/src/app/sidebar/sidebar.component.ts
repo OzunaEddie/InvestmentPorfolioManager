@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { of } from 'rxjs';
 import { TypicodeService } from 'src/services/typicode.service';
 
 @Component({
@@ -23,16 +24,30 @@ export class SidebarComponent implements OnInit {
   constructor(private typicodeService:TypicodeService){}
   accountId:any;
   ngOnInit(): void {
+    this.getInvestmentList();
+    this.bankAccountList()  
   }
 
   onSubmit(accountId:any){
     this.sendToRoot.emit(this.accountId)
+    
+    
   }
   
-  ngOnChanges(){
-    this.getInvestmentList();
-    this.getCashList();
+  ngOnChanges(changes: SimpleChanges){
+    this.getCashList()
+    if(!changes["accountInfo"].firstChange){
+      this.displayInvestmentList = false;
+      this.displayCashList = false;
+      this.investmentApiCallMade = false;
+      this.bankApiCallMade = false;
+      this.investmentList = []
+      this.bankAccountList = []
+      
+    }
+    
   }
+ 
 
   getInvestmentList(){
     this.displayInvestmentList = !this.displayInvestmentList;
